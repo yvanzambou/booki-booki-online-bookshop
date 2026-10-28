@@ -19,14 +19,12 @@
 
 - 📖 **Buchkatalog:** Bücher übersichtlich anzeigen
 - 🔎 **Buchdetails:** Informationen zu einzelnen Büchern einsehen
-- 👤 **Benutzerkonto:** Registrierung und Anmeldung, sofern im aktuellen Projektstand aktiviert
+- 👤 **Benutzerkonto:** Registrierung und Anmeldung
 - 🛒 **Persönlicher Warenkorb:** Bücher hinzufügen und Warenkorbeinträge verwalten
 - 💾 **Persistenter Warenkorb:** Warenkorbdaten in der Datenbank speichern und nach einer erneuten Anmeldung wieder abrufen
 - 🔌 **REST-API:** Kommunikation zwischen React-Frontend und Spring-Boot-Backend
 - 📥 **CSV-Import:** Buchdaten aus einer CSV-Datei einlesen
 - 🐳 **Docker Compose:** Frontend, Backend und Datenbank gemeinsam starten
-
-> Prüfe vor der Veröffentlichung, ob alle genannten Funktionen im aktuellen Repository vollständig implementiert sind.
 
 ---
 
@@ -57,33 +55,19 @@
 1. **Repository klonen**
 
    ```bash
-   git clone <URL_DEINES_GITHUB_REPOSITORYS>
-   cd bookshop
+   git clone https://github.com/yvanzambou/booki-booki-online-bookshop.git
+   cd booki-booki-online-bookshop
    ```
 
-2. **Umgebungsvariablen konfigurieren**
+2. **Buchdaten bereitstellen**
 
-   Lege bei Bedarf eine `.env`-Datei im Projekt-Hauptverzeichnis an. Beispiel passend zur Docker-Compose-Konfiguration:
-
-   ```dotenv
-   DB_NAME=booki_booki_db
-   DB_USERNAME=booki
-   DB_PASSWORD=change_me
-   DB_ROOT_PASSWORD=change_root_password
-   JAVA_OPTS=-Xmx512m
-   ```
-
-   Verwende sichere, individuelle Passwörter. Echte Zugangsdaten dürfen nicht in ein öffentliches GitHub-Repository eingecheckt werden.
-
-3. **Buchdaten bereitstellen**
-
-   Lege die CSV-Datei unter folgendem Pfad ab:
+   Die CSV-Datei ist unter folgendem Pfad abgelegt:
 
    ```text
    data/books.csv
    ```
 
-   Der Docker-Container greift über `/data/books.csv` auf die Datei zu. Wenn du stattdessen eine bereinigte Datei verwenden möchtest, passe `CSV_PATH` in der Compose-Konfiguration beispielsweise auf `/data/books_clean.csv` an.
+   Der Docker-Container greift über `/data/books.csv` auf die Datei zu, um die Datenbank mit Bücherdaten zu füllen.
 
 4. **Container starten**
 
@@ -112,9 +96,7 @@
 1. **Buchkatalog öffnen:** Rufe `http://localhost:3000` im Browser auf.
 2. **Bücher entdecken:** Sieh dir die verfügbaren Bücher und ihre Details an.
 3. **Warenkorb verwalten:** Füge Bücher hinzu und verwalte die ausgewählten Artikel.
-4. **Warenkorb erneut aufrufen:** Bei aktivierter Anmeldung werden gespeicherte Warenkorbdaten aus der Datenbank geladen.
-
-Die verfügbaren Aktionen hängen vom aktuellen Implementierungsstand der Anwendung ab.
+4. **Warenkorb erneut aufrufen:** Bei einer neuen Anmeldung werden gespeicherte Warenkorbdaten aus der Datenbank geladen.
 
 ---
 
@@ -129,6 +111,7 @@ docker compose exec db mysql -u booki -p booki_booki_db
 ```
 
 Gib das konfigurierte Datenbankpasswort ein, wenn du dazu aufgefordert wirst.
+Passwort: `booki_pass`.
 
 Nützliche SQL-Befehle:
 
@@ -167,22 +150,6 @@ MySQL-Datenbank
 
 ---
 
-## 🖼️ Screenshots
-
-Füge hier Screenshots der tatsächlich implementierten Benutzeroberfläche ein. Lege die Bilder beispielsweise im Verzeichnis `docs/screenshots/` ab und passe die Dateinamen entsprechend an.
-
-```html
-<p align="center">
-  <img src="docs/screenshots/startseite.png" alt="Startseite von Booki-Booki" width="700" />
-  <br>
-  <em>Abbildung 1: Startseite</em>
-</p>
-```
-
-Weitere geeignete Screenshots sind der Buchkatalog, die Buchdetailansicht und der Warenkorb.
-
----
-
 ## 🛑 Anwendung stoppen
 
 Die Container stoppen, ohne das persistente Datenbank-Volume zu löschen:
@@ -195,7 +162,7 @@ docker compose down
 
 ---
 
-## 💡 Mögliche Erweiterungen
+## 💡 Mögliche Erweiterungen (Bald)
 
 - 🧪 Automatisierte Backend-Tests mit JUnit und Spring Boot Test
 - 🔍 Erweiterte Suche, Filter, Sortierung und Pagination
