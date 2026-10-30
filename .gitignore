@@ -1,2 +1,6 @@
 .env
 # data/*.csv
+
+# IntelliJ IDEA
+.idea/
+*.iml
