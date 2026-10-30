@@ -24,18 +24,24 @@ import java.util.*;
 @RequiredArgsConstructor
 public class BookImportService {
 
-    /** Höchster benötigter Spaltenindex (price = row[17]) -> mindestens 18 Spalten. */
+    /**
+     * Höchster benötigter Spaltenindex (price = row[17]) -> mindestens 18 Spalten.
+     */
     private static final int MIN_COLUMNS = 18;
     private static final int BATCH_SIZE = 100;
 
     private final BookRepository bookRepository;
     private final GenreRepository genreRepository;
 
-    /** Pfad zur CSV-Datei (Property app.csv.path / Umgebungsvariable CSV_PATH). */
+    /**
+     * Pfad zur CSV-Datei (Property app.csv.path / Umgebungsvariable CSV_PATH).
+     */
     @Value("${app.csv.path}")
     private String csvPath;
 
-    /** Maximale Anzahl zu importierender Bücher (Property app.csv.max-books). */
+    /**
+     * Maximale Anzahl zu importierender Bücher (Property app.csv.max-books).
+     */
     @Value("${app.csv.max-books:50}")
     private int maxBooks;
 

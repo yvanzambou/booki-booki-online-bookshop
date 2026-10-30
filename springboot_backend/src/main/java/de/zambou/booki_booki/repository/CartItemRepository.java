@@ -1,4 +1,3 @@
-
 package de.zambou.booki_booki.repository;
 
 import de.zambou.booki_booki.model.CartItem;

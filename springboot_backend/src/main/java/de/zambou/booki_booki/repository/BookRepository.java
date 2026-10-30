@@ -20,6 +20,6 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     Optional<Book> findByIdWithGenres(@Param("id") Long id);
 
     @Query("SELECT DISTINCT b FROM Book b JOIN FETCH b.genres WHERE b.id IN " +
-           "(SELECT b2.id FROM Book b2 JOIN b2.genres g2 WHERE g2.genre = :genre)")
+            "(SELECT b2.id FROM Book b2 JOIN b2.genres g2 WHERE g2.genre = :genre)")
     List<Book> findBooksByGenre(@Param("genre") String genre);
 }

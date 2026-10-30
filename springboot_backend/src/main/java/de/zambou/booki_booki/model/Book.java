@@ -44,5 +44,6 @@ public class Book {
     private String coverImg;
     private String price;
 
-    public Book() {}
+    public Book() {
+    }
 }

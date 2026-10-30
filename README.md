@@ -11,7 +11,10 @@
 
 # 📚 Booki-Booki – Online-Buchshop
 
-**Booki-Booki** ist eine Full-Stack-Webanwendung für einen digitalen Buchshop. Nutzer können den Buchkatalog erkunden, Informationen zu Büchern ansehen und ausgewählte Bücher in einem persönlichen Warenkorb sammeln. Das Frontend basiert auf React, während ein Java-Backend mit Spring Boot die REST-API bereitstellt. MySQL dient zur dauerhaften Speicherung der Anwendungsdaten. Die Anwendung kann mit Docker Compose gestartet werden.
+**Booki-Booki** ist eine Full-Stack-Webanwendung für einen digitalen Buchshop. Nutzer können den Buchkatalog erkunden,
+Informationen zu Büchern ansehen und ausgewählte Bücher in einem persönlichen Warenkorb sammeln. Das Frontend basiert
+auf React, während ein Java-Backend mit Spring Boot die REST-API bereitstellt. MySQL dient zur dauerhaften Speicherung
+der Anwendungsdaten. Die Anwendung kann mit Docker Compose gestartet werden.
 
 ---
 
@@ -21,7 +24,8 @@
 - 🔎 **Buchdetails:** Informationen zu einzelnen Büchern einsehen
 - 👤 **Benutzerkonto:** Registrierung und Anmeldung
 - 🛒 **Persönlicher Warenkorb:** Bücher hinzufügen und Warenkorbeinträge verwalten
-- 💾 **Persistenter Warenkorb:** Warenkorbdaten in der Datenbank speichern und nach einer erneuten Anmeldung wieder abrufen
+- 💾 **Persistenter Warenkorb:** Warenkorbdaten in der Datenbank speichern und nach einer erneuten Anmeldung wieder
+  abrufen
 - 🔌 **REST-API:** Kommunikation zwischen React-Frontend und Spring-Boot-Backend
 - 📥 **CSV-Import:** Buchdaten aus einer CSV-Datei einlesen
 - 🐳 **Docker Compose:** Frontend, Backend und Datenbank gemeinsam starten
@@ -30,16 +34,16 @@
 
 ## 🧰 Verwendete Technologien
 
-| Bereich | Technologie |
-|----------|-------------|
-| Backend | Java 21, Spring Boot 3.5.7 |
-| Schnittstelle | REST API |
-| Frontend | React, JavaScript, Vite |
-| Benutzeroberfläche | Bootstrap |
-| Datenbank | MySQL 8.4 |
-| Datenbankzugriff | Spring Data JPA / Hibernate |
-| Datenimport | CSV |
-| Containerisierung | Docker, Docker Compose |
+| Bereich            | Technologie                 |
+|--------------------|-----------------------------|
+| Backend            | Java 21, Spring Boot 3.5.7  |
+| Schnittstelle      | REST API                    |
+| Frontend           | React, JavaScript, Vite     |
+| Benutzeroberfläche | Bootstrap                   |
+| Datenbank          | MySQL 8.4                   |
+| Datenbankzugriff   | Spring Data JPA / Hibernate |
+| Datenimport        | CSV                         |
+| Containerisierung  | Docker, Docker Compose      |
 
 ---
 
@@ -79,8 +83,8 @@
 
 5. **Anwendung im Browser öffnen**
 
-   - **Frontend:** http://localhost:3000
-   - **Backend:** http://localhost:8080
+    - **Frontend:** http://localhost:3000
+    - **Backend:** http://localhost:8080
 
 6. **Status und Logs prüfen**
 
@@ -96,7 +100,8 @@
 1. **Buchkatalog öffnen:** Rufe `http://localhost:3000` im Browser auf.
 2. **Bücher entdecken:** Sieh dir die verfügbaren Bücher und ihre Details an.
 3. **Warenkorb verwalten:** Füge Bücher hinzu und verwalte die ausgewählten Artikel.
-4. **Warenkorb erneut aufrufen:** Bei einer neuen Anmeldung werden gespeicherte Warenkorbdaten aus der Datenbank geladen.
+4. **Warenkorb erneut aufrufen:** Bei einer neuen Anmeldung werden gespeicherte Warenkorbdaten aus der Datenbank
+   geladen.
 
 ---
 
@@ -116,13 +121,15 @@ Passwort: `booki_pass`.
 Nützliche SQL-Befehle:
 
 ```sql
-SHOW TABLES;
+SHOW
+TABLES;
 ```
 
 Um die Daten einer Tabelle anzuzeigen:
 
 ```sql
-SELECT * FROM tabellenname;
+SELECT *
+FROM tabellenname;
 ```
 
 Ersetze `tabellenname` durch einen tatsächlichen Tabellennamen aus der Ausgabe von `SHOW TABLES`.
@@ -158,7 +165,8 @@ Die Container stoppen, ohne das persistente Datenbank-Volume zu löschen:
 docker compose down
 ```
 
-**Achtung:** `docker compose down --volumes` löscht auch das persistente Datenbank-Volume und damit die darin gespeicherten Daten. Verwende diesen Befehl nur, wenn du die Daten bewusst entfernen möchtest.
+**Achtung:** `docker compose down --volumes` löscht auch das persistente Datenbank-Volume und damit die darin
+gespeicherten Daten. Verwende diesen Befehl nur, wenn du die Daten bewusst entfernen möchtest.
 
 ---
 
@@ -176,7 +184,8 @@ docker compose down
 
 ## 📄 Hinweis
 
-Booki-Booki ist ein Portfolio-Projekt zur praktischen Anwendung von Konzepten der Full-Stack-Webentwicklung. Es verbindet ein React-Frontend mit einem Java-/Spring-Boot-Backend, einer relationalen MySQL-Datenbank und Docker Compose.
+Booki-Booki ist ein Portfolio-Projekt zur praktischen Anwendung von Konzepten der Full-Stack-Webentwicklung. Es
+verbindet ein React-Frontend mit einem Java-/Spring-Boot-Backend, einer relationalen MySQL-Datenbank und Docker Compose.
 
 ---
 

@@ -1,6 +1,7 @@
 package de.zambou.booki_booki.model;
 
 import jakarta.persistence.*;
+
 import java.time.Instant;
 
 @Entity
@@ -14,11 +15,24 @@ public class AuthSession {
     @Column(nullable = false)
     private Instant expiresAt;
 
-    protected AuthSession() {}
-    public AuthSession(String token, Customer customer, Instant expiresAt) {
-        this.token = token; this.customer = customer; this.expiresAt = expiresAt;
+    protected AuthSession() {
     }
-    public String getToken() { return token; }
-    public Customer getCustomer() { return customer; }
-    public Instant getExpiresAt() { return expiresAt; }
+
+    public AuthSession(String token, Customer customer, Instant expiresAt) {
+        this.token = token;
+        this.customer = customer;
+        this.expiresAt = expiresAt;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public Instant getExpiresAt() {
+        return expiresAt;
+    }
 }

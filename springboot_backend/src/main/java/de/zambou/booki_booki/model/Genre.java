@@ -23,5 +23,6 @@ public class Genre {
     //@JsonIgnore
     private List<Book> books = new ArrayList<>();
 
-    public Genre() {}
+    public Genre() {
+    }
 }

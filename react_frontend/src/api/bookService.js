@@ -19,8 +19,8 @@ export async function getBooksByGenre(genre) {
 }
 
 export async function getBookById(id) {
-  const res = await axios.get(`${API_URL}/book/${id}`);
-  return res.data;
+    const res = await axios.get(`${API_URL}/book/${id}`);
+    return res.data;
 }
 
 
@@ -39,40 +39,45 @@ export function formatEuroDE(amount) {
 }
 
 const AUTH_URL = `${API_URL}/auth`;
+
 export async function registerCustomer(payload) {
-  const res = await axios.post(`${AUTH_URL}/register`, payload);
-  return res.data;
+    const res = await axios.post(`${AUTH_URL}/register`, payload);
+    return res.data;
 }
+
 export async function loginCustomer(payload) {
-  const res = await axios.post(`${AUTH_URL}/login`, payload);
-  return res.data;
+    const res = await axios.post(`${AUTH_URL}/login`, payload);
+    return res.data;
 }
+
 export async function logoutCustomer(token) {
-  await axios.post(`${AUTH_URL}/logout`, {}, { headers: { Authorization: `Bearer ${token}` } });
+    await axios.post(`${AUTH_URL}/logout`, {}, {headers: {Authorization: `Bearer ${token}`}});
 }
+
 export async function savePaymentProfile(token, payload) {
-  return axios.put(`${API_URL}/account/payment-profile`, payload, {
-    headers: { Authorization: `Bearer ${token}` }
-  });
+    return axios.put(`${API_URL}/account/payment-profile`, payload, {
+        headers: {Authorization: `Bearer ${token}`}
+    });
 }
+
 export async function getPaymentProfile(token) {
-  const res = await axios.get(`${API_URL}/account/payment-profile`, {
-    headers: { Authorization: `Bearer ${token}` }
-  });
-  return res.status === 204 ? null : res.data;
+    const res = await axios.get(`${API_URL}/account/payment-profile`, {
+        headers: {Authorization: `Bearer ${token}`}
+    });
+    return res.status === 204 ? null : res.data;
 }
 
 export async function getSavedCart(token) {
-  const res = await axios.get(`${API_URL}/account/cart`, {
-    headers: { Authorization: `Bearer ${token}` }
-  });
-  return (res.data || []).map(line => ({ ...line.book, quantity: line.quantity }));
+    const res = await axios.get(`${API_URL}/account/cart`, {
+        headers: {Authorization: `Bearer ${token}`}
+    });
+    return (res.data || []).map(line => ({...line.book, quantity: line.quantity}));
 }
 
 export async function saveCart(token, cart) {
-  const payload = (cart || []).map(item => ({ bookId: item.id, quantity: item.quantity }));
-  const res = await axios.put(`${API_URL}/account/cart`, payload, {
-    headers: { Authorization: `Bearer ${token}` }
-  });
-  return (res.data || []).map(line => ({ ...line.book, quantity: line.quantity }));
+    const payload = (cart || []).map(item => ({bookId: item.id, quantity: item.quantity}));
+    const res = await axios.put(`${API_URL}/account/cart`, payload, {
+        headers: {Authorization: `Bearer ${token}`}
+    });
+    return (res.data || []).map(line => ({...line.book, quantity: line.quantity}));
 }
