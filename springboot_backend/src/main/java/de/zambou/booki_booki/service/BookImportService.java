@@ -25,7 +25,7 @@ import java.util.*;
 public class BookImportService {
 
     /** Höchster benötigter Spaltenindex (price = row[17]) -> mindestens 18 Spalten. */
-    private static final int MIN_COLUMNS = 16;
+    private static final int MIN_COLUMNS = 18;
     private static final int BATCH_SIZE = 100;
 
     private final BookRepository bookRepository;
@@ -36,7 +36,7 @@ public class BookImportService {
     private String csvPath;
 
     /** Maximale Anzahl zu importierender Bücher (Property app.csv.max-books). */
-    @Value("${app.csv.max-books:100}")
+    @Value("${app.csv.max-books:50}")
     private int maxBooks;
 
     public Path getCsvPath() {
@@ -82,22 +82,22 @@ public class BookImportService {
 
                 try {
                     Book book = new Book();
-                    book.setTitle(row[0]);
-                    book.setAuthor(row[1]);
-                    book.setRating(row[2]);
-                    book.setDescription(row[3]);
-                    book.setLanguage(row[4]);
-                    book.setIsbn(row[5]);
-                    book.setGenres(parseGenres(row[6], genreCache));
-                    book.setBookFormat(row[7]);
-                    book.setEdition(row[8]);
-                    book.setPages(row[9]);
-                    book.setPublisher(row[10]);
-                    book.setPublishDate(row[11]);
-                    book.setFirstPublishDate(row[12]);
-                    book.setNumRating(row[13]);
-                    book.setCoverImg(row[14]);
-                    book.setPrice(row[15]);
+                    book.setTitle(row[2]);
+                    book.setAuthor(row[3]);
+                    book.setRating(row[4]);
+                    book.setDescription(row[5]);
+                    book.setLanguage(row[6]);
+                    book.setIsbn(row[7]);
+                    book.setGenres(parseGenres(row[8], genreCache));
+                    book.setBookFormat(row[9]);
+                    book.setEdition(row[10]);
+                    book.setPages(row[11]);
+                    book.setPublisher(row[12]);
+                    book.setPublishDate(row[13]);
+                    book.setFirstPublishDate(row[14]);
+                    book.setNumRating(row[15]);
+                    book.setCoverImg(row[16]);
+                    book.setPrice(row[17]);
 
                     books.add(book);
                     imported++;
