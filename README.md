@@ -5,8 +5,6 @@
   <img src="https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?logo=javascript" />
   <img src="https://img.shields.io/badge/MySQL-8.4-4479A1?logo=mysql" />
   <img src="https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker" />
-  <img src="https://img.shields.io/badge/Bootstrap-UI-7952B3?logo=bootstrap" />
-  <img src="https://img.shields.io/badge/GitHub-Repository-181717?logo=github" />
 </p>
 
 # 📚 Booki-Booki – Online-Buchshop

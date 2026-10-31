@@ -29,7 +29,7 @@ export default function SiteLayout({children, cartCount = 0, user, onLogout}) {
             </div>
         </nav>
         <main className="min-vh-100">{children}</main>
-        <footer className="bg-light border-top py-4 mt-5">
+        <footer className="bg-dark border-top py-4 mt-5">
             <div className="container text-muted small d-flex justify-content-between flex-wrap gap-2">
                 <span>© {new Date().getFullYear()} Booki-Booki</span>
                 <span>Dein Buchshop – ein Lernprojekt</span>
